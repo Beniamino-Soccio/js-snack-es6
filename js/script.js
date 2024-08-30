@@ -14,6 +14,7 @@ posto occupato (place),
 
 Generiamo e stampiamo in console la lista per i segnaposto.
 */
+console.log('SNACK-1----------------------')
 //FOREACH
 //inizializzo le cose di partenza
 const tableName = "Tavolo Vip";
@@ -43,6 +44,7 @@ Id  Name                Grades
 102 Piero della Francesca   50
 120 Francesca da Polenta    84
 */
+console.log('SNACK-2----------------------')
 //inizializzo l'array studenti
 const students = [
     {id: 213, name: 'Marco della Rovere', grades: 78},
@@ -63,3 +65,55 @@ console.log(gradesOver70);
 //array studenti che hanno un totale di voti superiore a 70 e id superiore a 120
 const gradesOver70Id120 = students.filter(student => student.grades >= 70 && student.id > 120);
 console.log(gradesOver70Id120);
+
+/*
+*SNACK 3*
+Creare un array di oggetti:
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+Stampare in console la bici con peso minore utilizzando destructuring e template literal
+*/
+console.log('SNACK-3----------------------')
+
+const bikes = [
+    {name: 'Mountain bike', weight: 15 },
+    {name: 'BMX', weight: 10 },
+    {name: 'Graziella', weight: 8 },
+    {name: 'Bici elettrica', weight: 23 },
+    {name: 'Downhill', weight: 18 },
+    {name: 'Tandem', weight: 35 }
+]
+console.log(bikes);
+
+// Inizializziamo l'array
+let lightestBike = bikes[0];
+
+for (const bike of bikes) {
+    if (bike.weight < lightestBike.weight) {
+        lightestBike = bike;
+    }
+}
+
+// destructuring name e weight
+const {name, weight} = lightestBike;
+
+// Stampo con template literal
+console.log(`La bici più leggera è la ${name} con un peso di ${weight} kg.`);
+
+
+
+
+/*
+*SNACK 4*
+Creare un array di oggetti di squadre di calcio.
+Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+*/
+console.log('SNACK-4----------------------')
+
+/*
+*BONUS*
+Stampare in pagina oltre che in console!
+Ricordate sempre di fare la scaletta e che essendo Venerdì tocca lavorare
+*/
