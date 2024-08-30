@@ -75,12 +75,12 @@ Stampare in console la bici con peso minore utilizzando destructuring e template
 console.log('SNACK-3----------------------')
 
 const bikes = [
-    {name: 'Mountain bike', weight: 15 },
-    {name: 'BMX', weight: 10 },
-    {name: 'Graziella', weight: 8 },
-    {name: 'Bici elettrica', weight: 23 },
-    {name: 'Downhill', weight: 18 },
-    {name: 'Tandem', weight: 35 }
+    {nameBike: 'Mountain bike', weight: 15 },
+    {nameBike: 'BMX', weight: 10 },
+    {nameBike: 'Graziella', weight: 8 },
+    {nameBike: 'Bici elettrica', weight: 23 },
+    {nameBike: 'Downhill', weight: 18 },
+    {nameBike: 'Tandem', weight: 35 }
 ]
 console.log(bikes);
 
@@ -94,10 +94,10 @@ for (const bike of bikes) {
 }
 
 // destructuring name e weight
-const {name, weight} = lightestBike;
+const {nameBike, weight} = lightestBike;
 
 // Stampo con template literal
-console.log(`La bici più leggera è la ${name} con un peso di ${weight} kg.`);
+console.log(`La bici più leggera è la ${nameBike} con un peso di ${weight} kg.`);
 
 
 
@@ -111,6 +111,35 @@ Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli su
 Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 console.log('SNACK-4----------------------')
+
+const teams = [
+    {nameTeam: 'Bologna', points: 0, fouls: 0},
+    {nameTeam: 'Juventus', points: 0, fouls: 0},
+    {nameTeam: 'Inter', points: 0, fouls: 0},
+    {nameTeam: 'Lazio', points: 0, fouls: 0},
+    {nameTeam: 'Milan', points: 0, fouls: 0},
+    {nameTeam: 'Napoli', points: 0, fouls: 0},
+    {nameTeam: 'Parma', points: 0, fouls: 0},
+]
+
+//funzione numeri random
+function getRandomNumber() {
+    return Math.floor(Math.random() * 100) + 1;
+}
+
+// randomizzo i punti e i falli all'interno di [teams]
+teams.forEach(team => {
+    team.points = getRandomNumber();
+    team.fouls = getRandomNumber();
+});
+console.log('teams', teams);
+
+//creo un nuovo array con solo il nome della squadra e i falli
+const teamStats = teams.map(({nameTeam, fouls}) => ({nameTeam, fouls}));
+
+//stampo array
+console.log('array di nomi e falli: ', teamStats);
+
 
 /*
 *BONUS*
