@@ -140,9 +140,32 @@ const teamStats = teams.map(({nameTeam, fouls}) => ({nameTeam, fouls}));
 //stampo array
 console.log('array di nomi e falli: ', teamStats);
 
-
 /*
-*BONUS*
-Stampare in pagina oltre che in console!
-Ricordate sempre di fare la scaletta e che essendo Venerdì tocca lavorare
-*/
+SNACK-5
+A partire da un array di stringhe, crea un secondo array
+formattando le stringhe del primo array in minuscolo e con l'iniziale maiuscola.
+
+Es: ['pippo', 'PLUTO', 'Paperino'] => ['Pippo', 'Pluto', 'Paperino']
+*/ 
+let names = ['pippo', 'PLUTO', 'Paperino'];
+console.log(names);
+
+function formattazioneArray(names) {
+    return names.map(name => {
+        let lowerCase = name.toLowerCase();
+        return lowerCase.charAt(0).toUpperCase() + lowerCase.slice(1);
+    });
+}
+let formattedArray = formattazioneArray(names);
+
+console.log(formattedArray);
+
+function contrarioArray(names) {
+    return names.map(name => {
+        let upperCase = name.toUpperCase();
+        return upperCase.charAt(0).toLowerCase() + upperCase.slice(1);
+    })
+}
+let notFormattedArray = contrarioArray(names);
+console.log(notFormattedArray);
+
